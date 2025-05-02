@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 200vh;
+}
+
+/* Navbar */
+.navbar9 {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideDown 0.8s ease forwards;
+}
+@keyframes slideDown {
+  from {
+    top: -80px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.nav9-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo9 {
+  font-size: 28px;
+  background: linear-gradient(90deg, #00fff7, #ff00c8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.logo9 span {
+  font-weight: bold;
+  color: white;
+}
+
+/* Links */
+.nav9-links {
+  display: flex;
+  gap: 30px;
+}
+.nav9-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: 0.4s;
+}
+.nav9-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #00fff7, #ff00c8);
+  transition: 0.4s ease;
+}
+.nav9-links a:hover::after {
+  width: 100%;
+}
+
+/* Buttons */
+.login-btn {
+  background: linear-gradient(135deg, #00fff7, #ff00c8);
+  border: none;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff00c8, 0 0 20px #00fff7;
+}
+
+.nav9-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-toggle9 {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.nav9-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 240px;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.3s ease;
+}
+.nav9-sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+.nav9-sidebar .mobile-btn {
+  margin-top: 30px;
+}
+
+/* Show Sidebar */
+.nav9-sidebar.show {
+  right: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav9-links {
+    display: none;
+  }
+  .menu-toggle9 {
+    display: block;
+  }
+}
