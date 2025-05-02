@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
+.navbar11 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(15px);
+  background: rgba(20, 20, 20, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  animation: slideInTop 0.6s ease-out;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav11-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo11 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.logo11 span {
+  color: #00ffee;
+  text-shadow: 0 0 10px #00ffee;
+}
+
+.nav11-links {
+  display: flex;
+  gap: 32px;
+}
+.nav11-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+.nav11-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #00ffee;
+  box-shadow: 0 0 8px #00ffee;
+  transition: width 0.4s ease;
+}
+.nav11-links a:hover::after,
+.nav11-links a.active::after {
+  width: 100%;
+}
+
+.toggle11 {
+  display: none;
+  font-size: 26px;
+  color: #00ffee;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar11 {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: right 0.4s ease;
+  z-index: 1000;
+}
+.sidebar11.show {
+  right: 0;
+}
+.sidebar11 a {
+  color: #00ffee;
+  text-decoration: none;
+  font-size: 18px;
+  text-shadow: 0 0 8px #00ffee;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav11-links {
+    display: none;
+  }
+  .toggle11 {
+    display: block;
+  }
+}
