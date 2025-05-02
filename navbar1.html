@@ -1,0 +1,94 @@
+<!-- Navbar 2 -->
+<section style="margin-bottom: 100px;">
+    <nav class="navbar2">
+      <div class="nav-container">
+        <div class="logo">MyBrand</div>
+        <ul class="nav-links2" id="navLinks2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleNavbar2()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </section>
+  
+  <style>
+  /* Navbar 2 Styles */
+  .navbar2 {
+    background-color: #0d1117;
+    color: white;
+    padding: 15px 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .nav-links2 {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  .nav-links2 li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .nav-links2 li a:hover {
+    color: #58a6ff;
+  }
+  
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links2 {
+      display: none;
+      flex-direction: column;
+      background-color: #161b22;
+      position: absolute;
+      top: 60px;
+      right: 25px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .nav-links2.show {
+      display: flex;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+  </style>
+  
+  <script>
+  function toggleNavbar2() {
+    document.getElementById("navLinks2").classList.toggle("show");
+  }
+  </script>
+  
