@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Outfit:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background: #f9f3ef;
+  color: #4e3629;
+}
+
+.navbar10 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: #f5e8dc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  animation: fadeInScale 0.7s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.nav10-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo10 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #6d4c3d;
+}
+.logo10 span {
+  color: #a3765d;
+}
+
+.nav10-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav10-links a {
+  text-decoration: none;
+  color: #4e3629;
+  position: relative;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+.nav10-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #b2845e;
+  transition: width 0.3s ease;
+}
+.nav10-links a:hover::after,
+.nav10-links a.active::after {
+  width: 100%;
+}
+
+.nav10-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta10 {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #d6a77a, #b2845e);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(178, 132, 94, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta10:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(178, 132, 94, 0.5);
+}
+
+.toggle10 {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar10 {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  height: 100%;
+  width: 240px;
+  background: #f3e2d2;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+.sidebar10.show {
+  right: 0;
+}
+.sidebar10 a {
+  text-decoration: none;
+  color: #4e3629;
+  font-size: 18px;
+}
+.sidebar10 .cta10 {
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav10-links {
+    display: none;
+  }
+  .toggle10 {
+    display: block;
+  }
+}
