@@ -1,0 +1,168 @@
+<!-- Navbar 4 -->
+<section style="margin-bottom: 120px;">
+    <nav class="navbar4" id="navbar4">
+      <div class="nav4-container">
+        <div class="logo4">Nihal<span>Tech</span></div>
+        <ul class="nav4-links" id="nav4Links">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown4">
+            <a href="#">Services ▾</a>
+            <ul class="dropdown-menu4">
+              <li><a href="#">Web Dev</a></li>
+              <li><a href="#">AI Projects</a></li>
+              <li><a href="#">Freelancing</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+        </ul>
+        <div class="hamburger4" onclick="toggleNavbar4(this)">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </section>
+  
+  <style>
+  /* Glassmorphism Navbar */
+  .navbar4 {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+    padding: 14px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: 0.3s;
+  }
+  .nav4-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .logo4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .logo4 span {
+    color: #00e0ff;
+  }
+  .nav4-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  .nav4-links li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+  }
+  .nav4-links li a:hover {
+    color: #00e0ff;
+  }
+  
+  /* Dropdown */
+  .dropdown4 {
+    position: relative;
+  }
+  .dropdown-menu4 {
+    display: none;
+    position: absolute;
+    top: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+  }
+  .dropdown-menu4 li a {
+    display: block;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+  .dropdown4:hover .dropdown-menu4 {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Theme Button */
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hamburger */
+  .hamburger4 {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+  }
+  .hamburger4 span {
+    height: 3px;
+    width: 26px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav4-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .nav4-links.show {
+      display: flex;
+    }
+    .hamburger4 {
+      display: flex;
+    }
+  }
+  </style>
+  
+  <script>
+  function toggleNavbar4(el) {
+    document.getElementById("nav4Links").classList.toggle("show");
+  }
+  
+  function toggleTheme() {
+    const nav = document.getElementById("navbar4");
+    const isDark = nav.classList.toggle("dark-theme");
+  
+    if (isDark) {
+      nav.style.background = "rgba(0, 0, 0, 0.6)";
+      nav.style.color = "#fff";
+    } else {
+      nav.style.background = "rgba(255, 255, 255, 0.1)";
+      nav.style.color = "#fff";
+    }
+  }
+  </script>
+  
