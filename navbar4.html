@@ -1,0 +1,140 @@
+<!-- Navbar 5 -->
+<section style="margin-bottom: 120px;">
+    <nav class="navbar5" id="navbar5">
+      <div class="nav5-container">
+        <div class="logo5">N<span>i</span>h<span>a</span>l</div>
+        <div class="hamburger5" onclick="toggleNavbar5(this)">
+          <span></span><span></span><span></span>
+        </div>
+        <ul class="nav5-links" id="nav5Links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Experience</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  
+  <style>
+  /* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  
+  /* Navbar Base */
+  .navbar5 {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #0f0f0f;
+    padding: 16px 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  .nav5-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo5 {
+    color: #00f5ff;
+    font-size: 28px;
+    font-family: 'Orbitron', sans-serif;
+    animation: flicker 1.5s infinite alternate;
+  }
+  .logo5 span {
+    color: #fff;
+  }
+  
+  /* Neon Flicker */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; text-shadow: 0 0 8px #00f5ff; }
+    50% { opacity: 0.7; text-shadow: 0 0 2px #00f5ff; }
+  }
+  
+  .nav5-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  .nav5-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .nav5-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #00f5ff;
+    transition: 0.4s ease-in-out;
+  }
+  .nav5-links li a:hover::before {
+    width: 100%;
+  }
+  .nav5-links li a:hover {
+    color: #00f5ff;
+  }
+  
+  /* Hamburger */
+  .hamburger5 {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .hamburger5 span {
+    width: 26px;
+    height: 3px;
+    background: #00f5ff;
+    transition: 0.3s;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hamburger5 {
+      display: flex;
+    }
+    .nav5-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      background: #0f0f0f;
+      padding-top: 80px;
+      animation: slideInNav 0.4s ease forwards;
+    }
+    .nav5-links.show {
+      display: flex;
+    }
+    .nav5-links li {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    @keyframes slideInNav {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+  </style>
+  
+  <script>
+  function toggleNavbar5() {
+    document.getElementById("nav5Links").classList.toggle("show");
+  }
+  </script>
+  
