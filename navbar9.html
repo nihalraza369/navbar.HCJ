@@ -1,0 +1,125 @@
+<!-- Navbar 7 -->
+<header class="navbar7" id="navbar7">
+    <div class="nav7-container">
+      <h2 class="logo7">Nihal<span>AI</span></h2>
+      <nav>
+        <ul class="nav7-links" id="nav7Links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+      </div>
+    </div>
+  </header>
+  
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  
+  :root {
+    --bg-color: rgba(255,255,255,0.05);
+    --text-color: white;
+    --hover-color: #00f5ff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: var(--text-color);
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+  
+  .navbar7 {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(15px);
+    background: var(--bg-color);
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+  .navbar7.shrink {
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .nav7-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo7 {
+    font-size: 26px;
+    color: var(--text-color);
+  }
+  .logo7 span {
+    color: #00f5ff;
+  }
+  .nav7-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  .nav7-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.3s;
+  }
+  .nav7-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background: #00f5ff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  .nav7-links a:hover::before,
+  .nav7-links a.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .nav7-links a:hover {
+    color: #00f5ff;
+    text-shadow: 0 0 10px #00f5ff;
+  }
+  
+  .theme-toggle {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+  }
+  </style>
+  
+  <script>
+  // Scroll shrink navbar
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar7');
+    nav.classList.toggle('shrink', window.scrollY > 50);
+  });
+  
+  // Toggle Theme
+  let dark = true;
+  function toggleTheme() {
+    dark = !dark;
+    document.documentElement.style.setProperty('--bg-color', dark ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.9)');
+    document.documentElement.style.setProperty('--text-color', dark ? 'white' : '#111');
+    document.body.style.background = dark
+      ? 'linear-gradient(135deg, #000000, #1a1a1a)'
+      : 'linear-gradient(135deg, #e0eafc, #cfdef3)';
+    document.getElementById('themeIcon').textContent = dark ? '🌙' : '☀️';
+  }
+  </script>
+  
