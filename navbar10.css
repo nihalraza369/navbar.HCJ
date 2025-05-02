@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: white;
+  min-height: 200vh;
+  overflow-x: hidden;
+}
+.navbar8 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+  box-shadow: 0 0 30px rgba(0,255,255,0.15);
+}
+.nav8-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo8 {
+  font-size: 26px;
+  background: linear-gradient(90deg, #00f5ff, #ff00c8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.logo8 span {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav8-links {
+  display: flex;
+  gap: 30px;
+}
+.nav8-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease;
+}
+.nav8-links a::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #00f5ff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+.nav8-links a:hover::after,
+.nav8-links a.active::after {
+  width: 100%;
+}
+.search-box {
+  position: relative;
+}
+.search-box input {
+  padding: 7px 30px 7px 10px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: 0.3s;
+}
+.search-box input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.15);
+}
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  pointer-events: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  gap: 20px;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  font-size: 18px;
+}
+.sidebar.show {
+  right: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav8-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .search-box input {
+    width: 120px;
+  }
+}
