@@ -1,0 +1,120 @@
+<!-- Navbar 6 -->
+<section style="margin-bottom: 120px;">
+    <nav class="navbar6" id="navbar6">
+      <div class="nav6-container">
+        <div class="logo6">Nihal<span>Dev</span></div>
+        <div class="hamburger6" onclick="toggleNavbar6(this)">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul class="nav6-links" id="nav6Links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  
+  <style>
+  /* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+  
+  /* Base */
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+  }
+  .navbar6 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .nav6-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo6 {
+    font-size: 26px;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .logo6 span {
+    color: #00f5ff;
+  }
+  .nav6-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  .nav6-links li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .nav6-links li a:hover,
+  .nav6-links li a.active {
+    background: linear-gradient(45deg, #00f5ff, #00ffaa);
+    color: #000;
+    box-shadow: 0 0 15px #00f5ff;
+  }
+  
+  /* Hamburger */
+  .hamburger6 {
+    display: none;
+    cursor: pointer;
+  }
+  .bar {
+    width: 28px;
+    height: 3px;
+    background: #00f5ff;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hamburger6 {
+      display: block;
+    }
+    .nav6-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.95);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      transition: 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+    .nav6-links.show {
+      right: 0;
+    }
+  }
+  </style>
+  
+  <script>
+  function toggleNavbar6() {
+    document.getElementById("nav6Links").classList.toggle("show");
+  }
+  </script>
+  
