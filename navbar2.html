@@ -1,0 +1,126 @@
+<!-- Navbar 3 -->
+<section style="margin-bottom: 120px;">
+    <nav class="navbar3">
+      <div class="nav3-container">
+        <div class="logo3">NihalDev</div>
+        <ul class="nav3-links" id="nav3Links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger3" id="hamburger3" onclick="toggleNavbar3()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </section>
+  
+  <style>
+  /* Navbar 3 Styles */
+  .navbar3 {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 16px 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 99;
+  }
+  .nav3-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .logo3 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .nav3-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    transition: all 0.4s ease;
+  }
+  .nav3-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    font-weight: 500;
+  }
+  .nav3-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+  .nav3-links li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Hamburger Style */
+  .hamburger3 {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 100;
+  }
+  .hamburger3 span {
+    height: 3px;
+    width: 26px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hamburger3 {
+      display: flex;
+    }
+    .nav3-links {
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      animation: slideIn 0.4s ease forwards;
+    }
+    .nav3-links.show {
+      display: flex;
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-15px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  </style>
+  
+  <script>
+  function toggleNavbar3() {
+    const navLinks = document.getElementById("nav3Links");
+    const hamburger = document.getElementById("hamburger3");
+    navLinks.classList.toggle("show");
+  
+    // Hamburger animation
+    hamburger.classList.toggle("active");
+  }
+  </script>
+  
