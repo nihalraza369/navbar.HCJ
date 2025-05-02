@@ -33,7 +33,7 @@ body {
 .logo8 {
   font-size: 26px;
   background: linear-gradient(90deg, #00f5ff, #ff00c8);
-  -webkit-background-clip: text;
+
   color: transparent;
 }
 .logo8 span {
