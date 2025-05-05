@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .gallery {
+          --g: 8px;
+          /* the gap */
+          --s: 500px;
+          /* the size */
+          display: grid;
+          border-radius: 50%;
+        }
+      
+        .gallery>img {
+          grid-area: 1/1;
+          width: var(--s);
+          aspect-ratio: 1;
+          object-fit: cover;
+          border-radius: 50%;
+          transform: translate(var(--_x, 0), var(--_y, 0));
+          cursor: pointer;
+          font-size: 0;
+          z-index: 0;
+          transition: .3s, z-index 0s .3s;
+        }
+      
+        .gallery img:hover {
+          font-size: var(--s);
+          z-index: 1;
+          transition: transform .2s, font-size .3s .2s, z-index 0s;
+        }
+      
+        .gallery:hover img {
+          transform: translate(0, 0);
+        }
+      
+        .gallery>img:nth-child(1) {
+          clip-path: polygon(50% 50%, .5em 1.2em, 0 1em, 0 0, 100% 0, 100% 1em, calc(100% - .5em) 1.2em);
+          --_y: calc(-1*var(--g))
+        }
+      
+        .gallery>img:nth-child(2) {
+          clip-path: polygon(50% 50%, calc(100% - 1.2em) 0.5em, calc(100% - 1em) 0, 100% 0, 100% 100%, calc(100% - 1em) 100%, calc(100% - 1.2em) calc(100% - .5em));
+          --_x: var(--g)
+        }
+      
+        .gallery>img:nth-child(3) {
+          clip-path: polygon(50% 50%, calc(100% - .5em) calc(100% - 1.2em), 100% calc(100% - 1.2em), 100% 100%, 0 100%, 0 calc(100% - 1em), .5em calc(100% - 1.2em));
+          --_y: var(--g)
+        }
+      
+        .gallery>img:nth-child(4) {
+          clip-path: polygon(50% 50%, 1.2em .5em, 1em 0, 0 0, 0 100%, 1em 100%, 1.2em calc(100% - .5em));
+          --_x: calc(-1*var(--g))
+        }
+      
+        body {
+          margin: 0;
+          min-height: 100vh;
+          display: grid;
+          place-content: center;
+          background: #005EB8;
+        }
+      </style>
+      
+      <div class="gallery">
+        <img src="https://assets.codepen.io/8889025/Collabrorative.PNG" alt="a hot air balloon">
+        <img src="https://assets.codepen.io/8889025/Adventurous.PNG">
+        <img src="https://assets.codepen.io/8889025/Reliable.PNG" alt="a small boat">
+        <img src="https://assets.codepen.io/8889025/Energetic.PNG" alt="a forest">
+      </div>
+      <br><a href="https://nhsbsauk.sharepoint.com.mcas.ms/sites/MyHub/SitePages/Our-Purpose-Vision-and-Values.aspx" target="_blank" class="btn btn-primary btn-block" role="button">Our Purpose, Vision and Values</a>
+</body>
+</html>
