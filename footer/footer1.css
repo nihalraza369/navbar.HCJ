@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1d1e26, #3b3f4e);
+    color: #fff;
+  }
+  
+  .glass-footer {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 1rem 1rem;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .glass-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .glass-brand h2 {
+    color: #00ffd5;
+    margin-bottom: 0.5rem;
+  }
+  
+  .glass-brand p {
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+  
+  .glass-links h4,
+  .glass-contact h4 {
+    color: #00ffd5;
+    margin-bottom: 0.5rem;
+  }
+  
+  .glass-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .glass-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  
+  .glass-links ul li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+  }
+  
+  .glass-contact p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #ccc;
+  }
+  
+  .glass-bottom {
+    text-align: center;
+  }  
