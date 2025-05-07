@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(to bottom, #0f0f0f, #1f1f1f);
+    color: #fff;
+  }
+  
+  .page-content {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .glass-footer {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px 20px 0 0;
+    padding: 3rem 2rem;
+    margin: 4rem 1rem 0;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  .footer-heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00f9ff, #ff00d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .subscribe-form {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .subscribe-form input {
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    border: none;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+  }
+  
+  .subscribe-form button {
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #00f9ff, #ff00d4);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .subscribe-form button:hover {
+    opacity: 0.9;
+  }
+  
+  .social-icons {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #00f9ff;
+    transform: scale(1.2);
+  }
+  
+  .copyright {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .footer-heading {
+      font-size: 1.5rem;
+    }
+  
+    .subscribe-form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .subscribe-form input {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
