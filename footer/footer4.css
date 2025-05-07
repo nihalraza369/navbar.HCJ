@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  .main-content {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .footer {
+    background: #111;
+    padding: 3rem 1rem 2rem;
+    margin-top: 60px;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #00ffd5, #ff00f7) 1;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .footer-content {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .footer-title {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #00ffd5, #ff00f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-subtext {
+    color: #bbb;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+  }
+  
+  .footer-links a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #00ffd5;
+    transition: width 0.3s;
+    margin-top: 3px;
+  }
+  
+  .footer-links a:hover {
+    color: #00ffd5;
+  }
+  
+  .footer-links a:hover::after {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .footer-title {
+      font-size: 1.5rem;
+    }
+  
+    .footer-links {
+      gap: 1rem;
+    }
+  }
+  
