@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #101010;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  .content {
+    min-height: 80vh;
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+  
+  .tab-footer {
+    background: #1a1a1a;
+    padding: 2rem;
+    text-align: center;
+    border-top: 3px solid #00f7ff;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .tab {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #00f7ff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .tab:hover,
+  .tab.active {
+    background: #00f7ff;
+    color: #000;
+  }
+  
+  .tab-content {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .tab-panel.active {
+    display: block;
+  }
+  
+  .footer-bottom {
+    margin-top: 2rem;
+    color: #bbb;
+    font-size: 0.9rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .tab {
+      padding: 0.5rem 1rem;
+    }
+  
+    .tab-content {
+      padding: 0 1rem;
+    }
+  }
+  
